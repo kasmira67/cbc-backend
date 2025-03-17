@@ -108,4 +108,3 @@ export function updateProduct(req, res) {
     )
 }
 
-//sample codes
