@@ -6,12 +6,12 @@ import jwt, { decode } from "jsonwebtoken";
 import productRouter from "./routes/productRouter.js";
 import { verifyJWT } from "./middleware/auth.js";
 import orderRouter from "./routes/orderRouter.js";
+import dotenv from 'dotenv';
+dotenv.config()
 
 const app = express();
 
-//mongodb+srv://admin:123@cluster0.jxwc0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-
-mongoose.connect("mongodb+srv://admin:123@cluster0.jxwc0.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(
+mongoose.connect(process.env.MONGO_URL).then(
     () => {
         console.log("Connected to the Database")
     }
